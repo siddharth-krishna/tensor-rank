@@ -98,16 +98,16 @@ if __name__ == "__main__":
     Ls_9 = mk_Ls(4)
 
     m = np.sum(np.kron(Ls_5[i], mk_per_5_layer(i)) for i in xrange(5))
-    print "Lower bound for per_5: %f" % (np.linalg.matrix_rank(m),)
+    print "Lower bound for per_5: %f" % (np.linalg.matrix_rank(m) / 6.0,)
 
     m = np.sum(np.kron(Ls_5[i], mk_det_5_layer(i)) for i in xrange(5))
-    print "Lower bound for det_5: %f" % (np.linalg.matrix_rank(m),)
+    print "Lower bound for det_5: %f" % (np.linalg.matrix_rank(m) / 6.0,)
 
     m = np.sum(np.kron(Ls_7[i], mk_per_7_layer(i)) for i in xrange(7))
-    print "Lower bound for per_7: %f" % (np.linalg.matrix_rank(m),)
+    print "Lower bound for per_7: %f" % (np.linalg.matrix_rank(m) / 20.0,)
 
     m = np.sum(np.kron(Ls_7[i], mk_det_7_layer(i)) for i in xrange(7))
-    print "Lower bound for det_7: %f" % (np.linalg.matrix_rank(m))
+    print "Lower bound for det_7: %f" % (np.linalg.matrix_rank(m) / 20.0)
 
     sdet = mk_sdet_3_layers()
     m = np.sum(np.kron(Ls_9[i], sdet[i]) for i in xrange(9))

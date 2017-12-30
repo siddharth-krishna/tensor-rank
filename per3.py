@@ -1,3 +1,7 @@
+"""
+Compute an explicit expression for det_3 = per_3 over F_2 by (smart) exhaustive search.
+"""
+
 import itertools as it
 from collections import defaultdict
 import tensint as ti
@@ -48,8 +52,7 @@ def find_with_buckets(tensors1, tensors2, target, N):
     return None
 
 
-def find_per3_expr():
-    """Tries to find an expression for per_3 as a sum of simple tensors."""
+if __name__ == "__main__":
     simpls = ti.simple_tensors(3)
     print "Created %d simple tensors." % (len(simpls,))
     sums = set(t1 ^ t2 for (t1, t2) in it.combinations(simpls, 2))
